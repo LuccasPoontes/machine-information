@@ -1,43 +1,69 @@
-# machine-information
-O código fornecido utiliza a biblioteca wmi para acessar informações sobre o sistema do computador.
 
-Importação da Biblioteca WMI:
+# Título do Projeto
 
-python
-Copiar código
-import wmi
-Esta linha importa a biblioteca wmi, que é uma interface para o Windows Management Instrumentation. Esta biblioteca permite que você acesse e manipule informações de gerenciamento e configurações do Windows.
+Uma breve descrição sobre o que esse projeto faz e para quem ele é
 
-Instanciação do Objeto WMI:
+# System Information Script
+Este repositório contém um script Python que utiliza a biblioteca wmi para recuperar e exibir informações básicas do sistema em um computador com Windows.
 
-python
-Copiar código
+## Pré-requisitos
+Python 3.x
+Biblioteca wmi
+Você pode instalar a biblioteca wmi utilizando o pip:
+
+bash
+
+```pip install WMI```
+
+## Uso
+Clone este repositório ou baixe o arquivo do script.
+Certifique-se de que você tenha o Python e a biblioteca wmi instalados.
+Execute o script usando um interpretador Python.
+bash
+
+python system_info.py
+
+## Descrição do Script
+O script recupera e imprime as seguintes informações do sistema:
+
+Fabricante //
+Modelo //
+Nome //
+Número de Processadores //
+Tipo de Sistema //
+Família do Sistema 
+
+## Exemplo de Saída
+
+Fabricante: [Nome do Fabricante]
+Modelo: [Nome do Modelo]
+Nome: [Nome do Sistema]
+Número de Processadores: [Número de Processadores]
+Tipo de Sistema: [Tipo de Sistema]
+Família do Sistema: [Família do Sistema]
+
+## Código
+Aqui está o código completo do script:
+
+```import wmi
 c = wmi.WMI()
-Aqui, um objeto WMI é criado. Este objeto é usado para interagir com o sistema WMI do Windows.
-
-Recuperação de Informações do Sistema:
-
-python
-Copiar código
 my_system = c.Win32_ComputerSystem()[0]
-Esta linha obtém uma lista de objetos Win32_ComputerSystem, que contém informações sobre o sistema do computador. O índice [0] é usado para acessar o primeiro (e geralmente o único) objeto nesta lista, representando o computador atual.
 
-Impressão das Informações do Sistema:
-O código a seguir imprime várias informações sobre o sistema:
-
-python
-Copiar código
 print(f"Manufacturer: {my_system.Manufacturer}")
 print(f"Model: {my_system.Model}")
 print(f"Name: {my_system.Name}")
 print(f"NumberOfProcessors: {my_system.NumberOfProcessors}")
 print(f"SystemType: {my_system.SystemType}")
 print(f"SystemFamily: {my_system.SystemFamily}")
-Estas linhas usam formatação de strings para exibir as seguintes informações:
+```
 
-Manufacturer: O fabricante do sistema (por exemplo, Dell, HP, etc.).
-Model: O modelo do sistema.
-Name: O nome do sistema.
-NumberOfProcessors: O número de processadores no sistema.
-SystemType: O tipo de sistema (por exemplo, x64-based PC).
-SystemFamily: A família do sistema (por exemplo, família de computadores desktop ou laptop).
+
+## Licença
+Este projeto é licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+## Contribuições
+Contribuições são bem-vindas! Por favor, abra uma issue ou envie um pull request para quaisquer mudanças.
+
+## Contato
+Para quaisquer perguntas ou comentários, por favor entre em contato com [Luccas Pontes] em [luccasxx13@outlook.com].
+
